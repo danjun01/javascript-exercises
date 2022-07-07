@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            const passFilter = function(val, filterVals) {
+                let push;
+                    for (i = 0; i < filterVals.length; i++) {
+                        push = true;
+                            if (val == filterVals[i]) {
+                            push = false;
+                            return push;
+                        }
+                    }
+                return push;
+            };
+            const removeFromArray = function(arr, ...filter) {
+                let newArr = [];
+                for (i = 0; i < arr.length; i++) {
+                    if (passFilter(arr[i], filter)) {
+                        newArr.push(arr[i]);
+                    }
+                }
+                return newArr;
+            };
+
+            console.log(removeFromArray([1, 2, 3, 4], 3, 2));
+            console.log(removeFromArray([1, 2, 3, 4], 3));
+
+        </script>
+
+    </body>
+</html>
